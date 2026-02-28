@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "cd ../.. && pnpm turbo run build --filter=@taskmanager/web",
   "outputDirectory": ".next",
   "framework": "nextjs",
-  "installCommand": "npm install"
+  "installCommand": "cd ../.. && pnpm install --frozen-lockfile"
 }
