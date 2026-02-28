@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Task Manager Monorepo
 
 This repository contains the monorepo version of the TaskFlow task management application.
@@ -52,3 +53,7 @@ The original single-app repository was migrated into this workspace by:
 7. Validating `pnpm install`, `pnpm dev`, `pnpm build`, and linting from the root.
 
 This structure enables scalable development, faster builds, and code reuse.
+=======
+# task-manager-monorepo
+task interaction for group and personal
+>>>>>>> 04d64e5f54101ffe5fd95bcac6973804a25cd6bd
