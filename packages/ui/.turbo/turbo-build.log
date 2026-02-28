@@ -1,0 +1,4 @@
+
+> @taskmanager/ui@1.0.0 build D:\Projects\task-manager-monorepo\packages\ui
+> tsc --build
+

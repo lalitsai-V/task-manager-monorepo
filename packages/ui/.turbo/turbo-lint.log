@@ -1,0 +1,5 @@
+
+> @taskmanager/ui@1.0.0 lint D:\Projects\task-manager-monorepo\packages\ui
+> eslint . --ext .ts,.tsx
+
+Pages directory cannot be found at D:\Projects\task-manager-monorepo\packages\ui\pages or D:\Projects\task-manager-monorepo\packages\ui\src\pages. If using a custom path, please configure with the `no-html-link-for-pages` rule in your eslint config file.

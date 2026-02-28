@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@taskmanager/common-types": ["packages/common-types/src"],
+      "@taskmanager/ui": ["packages/ui/src"]
+    }
+  },
+  "include": ["apps/**/*", "packages/**/*"],
+  "references": [
+    { "path": "packages/common-types" },
+    { "path": "packages/ui" }
+  ]
+}

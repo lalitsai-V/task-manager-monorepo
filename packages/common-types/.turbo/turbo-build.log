@@ -1,0 +1,4 @@
+
+> @taskmanager/common-types@1.0.0 build D:\Projects\task-manager-monorepo\packages\common-types
+> tsc --build
+

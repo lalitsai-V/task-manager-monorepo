@@ -1,0 +1,43 @@
+
+> @taskmanager/web@0.1.0 build D:\Projects\task-manager-monorepo\apps\web
+> next build
+
+   ▲ Next.js 15.5.12
+   - Environments: .env
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 15.5s
+   Skipping linting
+   Checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/12) ...
+   Generating static pages (3/12) 
+   Generating static pages (6/12) 
+   Generating static pages (9/12) 
+ ✓ Generating static pages (12/12)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    3.11 kB         141 kB
+├ ○ /_not-found                            993 B         103 kB
+├ ƒ /api/invite-member                     133 B         102 kB
+├ ƒ /api/tasks                             133 B         102 kB
+├ ƒ /api/uploads                           133 B         102 kB
+├ ƒ /dashboard                             177 B         196 kB
+├ ƒ /dashboard/groups                    1.84 kB         107 kB
+├ ƒ /dashboard/groups/[id]               5.43 kB         202 kB
+├ ƒ /dashboard/profile                     829 B         103 kB
+├ ○ /login                               2.24 kB         162 kB
+└ ○ /signup                              2.32 kB         162 kB
++ First Load JS shared by all             102 kB
+  ├ chunks/249dc029-07a84849d1915fba.js  54.2 kB
+  ├ chunks/760-276b617cfee6db71.js       45.9 kB
+  └ other shared chunks (total)          1.99 kB
+
+
+ƒ Middleware                             82.1 kB
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

@@ -1,0 +1,6 @@
+
+> @taskmanager/common-types@1.0.0 lint D:\Projects\task-manager-monorepo\packages\common-types
+> eslint . --ext .ts
+
+Pages directory cannot be found at D:\Projects\task-manager-monorepo\packages\common-types\pages or D:\Projects\task-manager-monorepo\packages\common-types\src\pages. If using a custom path, please configure with the `no-html-link-for-pages` rule in your eslint config file.
+Warning: React version was set to "detect" in eslint-plugin-react settings, but the "react" package is not installed. Assuming latest React version for linting.

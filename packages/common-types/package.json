@@ -1,0 +1,21 @@
+{
+  "name": "@taskmanager/common-types",
+  "version": "1.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "rimraf dist",
+    "lint": "eslint . --ext .ts",
+    "test": "echo \"No tests defined\" && exit 0"
+  },
+  "dependencies": {
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "eslint": "^8.0.0",
+    "rimraf": "^3.0.0"
+  }
+}
