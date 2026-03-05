@@ -1,48 +1,44 @@
-# CI/CD Pipeline for task-manager-monorepo
-# Runs on push and pull request to main branch
-
 name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   ci:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout repository
+      # Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Setup Node.js
+      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "pnpm"
 
-      # Step 3: Install pnpm
+      # Install pnpm
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
+        with:
+          run_install: false
 
-      # Step 4: Install dependencies
+      # Install dependencies
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # Step 5: Run lint
-      - name: Run lint checks
+      # Lint
+      - name: Run lint
         run: pnpm lint
 
-      # Step 6: Type checking
-      - name: Run TypeScript type checking
+      # Type check
+      - name: Run TypeScript type check
         run: pnpm exec turbo run type-check
 
-      # Step 7: Build project
+      # Build
       - name: Build project
         run: pnpm build
