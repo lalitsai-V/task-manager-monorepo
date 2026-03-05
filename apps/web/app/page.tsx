@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black bg-[url('/TASK-HOME.png')] bg-cover bg-center">
+    <div className="min-h-screen bg-black bg-[(TASK-HOME.png)] bg-cover bg-center">
       {/* Navigation */}
       <Navbar />
 

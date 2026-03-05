@@ -145,7 +145,7 @@ export function CreateTaskForm({ groupId }: Props) {
           type="submit"
           variant="primary"
           disabled={loading}
-          className="w-full lg:w-auto px-6 lg:px-8 !bg-purple-600 !hover:bg-purple-700 !text-white !border-purple-700"
+          className="w-full lg:w-auto px-6 lg:px-8"
         >
           {loading ? (
             <div className="flex items-center gap-2">

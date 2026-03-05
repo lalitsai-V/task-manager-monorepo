@@ -25,7 +25,7 @@ export function DeleteGroupButton({ groupId }: { groupId: string }) {
         <button
             onClick={handleDelete}
             disabled={isDeleting}
-            className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white border border-red-700 rounded-lg transition-colors text-sm font-medium disabled:opacity-50"
+            className="px-4 py-2 bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 rounded-lg transition-colors text-sm font-medium disabled:opacity-50"
         >
             {isDeleting ? 'Deleting...' : 'Delete Group'}
         </button>

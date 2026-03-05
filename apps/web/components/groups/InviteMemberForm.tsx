@@ -43,12 +43,7 @@ export function InviteMemberForm({ groupId }: { groupId: string }) {
         onChange={(e) => setEmail(e.target.value)}
         required
       />
-      <Button
-        type="submit"
-        variant="primary"
-        disabled={loading}
-        className="bg-purple-600 hover:bg-purple-700 text-white border-purple-700"
-      >
+      <Button type="submit" variant="primary" disabled={loading}>
         {loading ? 'Inviting...' : 'Invite Member'}
       </Button>
     </form>

@@ -41,7 +41,7 @@ export function CreateGroupForm() {
         onChange={(e) => setName(e.target.value)}
         required
       />
-      <Button type="submit" variant="primary" disabled={loading} className="!bg-purple-600 !hover:bg-purple-700 !text-white !border-purple-700">
+      <Button type="submit" variant="primary" disabled={loading}>
         {loading ? 'Creating...' : 'Create Group'}
       </Button>
     </form>
