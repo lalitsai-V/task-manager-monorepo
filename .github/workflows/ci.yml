@@ -1,5 +1,5 @@
 # CI/CD Pipeline for task-manager-monorepo
-# Triggers on every push to main and on all pull requests targeting main.
+# Runs on push and pull request to main branch
 
 name: CI
 
@@ -13,61 +13,36 @@ on:
 
 jobs:
   ci:
-    # Use the latest Ubuntu runner provided by GitHub Actions
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the repository code so the workflow can access it
+      # Step 1: Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js version 20 (LTS) for the build environment
-      - name: Set up Node.js
+      # Step 2: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: "pnpm"
 
-      # Step 3: Install pnpm globally using the official pnpm action.
-      # The version is pinned to match the packageManager field in package.json.
-      - name: Install pnpm
+      # Step 3: Install pnpm
+      - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 10
-          run_install: false
 
-      # Step 4: Cache pnpm's store directory to speed up future installs.
-      # The cache key is derived from the OS and the lockfile hash, so it
-      # automatically invalidates whenever dependencies change.
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
-
-      - name: Cache pnpm store
-        uses: actions/cache@v4
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      # Step 5: Install all workspace dependencies using pnpm.
-      # --frozen-lockfile ensures the lockfile is not updated, which
-      # guarantees a reproducible install in CI.
+      # Step 4: Install dependencies
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # Step 6: Run ESLint across all packages via Turborepo.
-      # The pipeline will fail immediately if any lint error is found.
+      # Step 5: Run lint
       - name: Run lint checks
         run: pnpm lint
 
-      # Step 7: Run TypeScript type checking across all packages via Turborepo.
-      # This catches type errors without emitting any output files.
+      # Step 6: Type checking
       - name: Run TypeScript type checking
         run: pnpm exec turbo run type-check
 
-      # Step 8: Build all packages and apps via Turborepo.
-      # A successful build confirms the project compiles without errors.
+      # Step 7: Build project
       - name: Build project
         run: pnpm build
