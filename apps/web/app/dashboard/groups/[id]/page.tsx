@@ -15,7 +15,8 @@ const supabaseUrl =
 
 const supabaseServiceRole =
   process.env.SUPABASE_SERVICE_ROLE_KEY ?? "placeholder-service-role"
-export default async function GroupTasksPage({ params }: { params: { id: string } }) {
+
+export default async function GroupTasksPage({ params }: { params: Promise<{ id: string }> }) {
   const user = await getUser()
 
   if (!user) {
