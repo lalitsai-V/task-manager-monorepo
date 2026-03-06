@@ -96,7 +96,7 @@ export default function Home() {
             Join thousands of teams using TaskFlow to stay organized and collaborate effectively.
           </p>
           <Link href="/signup">
-            <Button variant="primary" size="lg" className="px-8 !bg-purple-600 !hover:bg-purple-700 !text-white !border-purple-700">
+            <Button variant="primary" size="lg" className="px-8 !bg-pink-600 !hover:bg-purple-700 !text-white !border-purple-700">
               Start Free Today
             </Button>
           </Link>
