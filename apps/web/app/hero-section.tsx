@@ -36,7 +36,7 @@ export function HeroSection() {
             transition={{ delay: 0.6, duration: 0.8, type: 'spring', stiffness: 100, damping: 25, staggerChildren: 0.2 }}
           >
               <Link href="/signup">
-                <Button variant="primary" size="lg" className="w-full sm:w-auto px-8 !bg-purple-600 !hover:bg-purple-700 !text-white !border-purple-700">
+                <Button variant="primary" size="lg" className="w-full sm:w-auto px-8 !bg-yellow-600 !hover:bg-purple-700 !text-white !border-purple-700">
                   Get Started Free
                 </Button>
               </Link>
