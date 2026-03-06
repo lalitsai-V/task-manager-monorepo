@@ -10,10 +10,12 @@ import { GroupDashboard } from '@/components/groups/GroupDashboard'
 import { redirect } from 'next/navigation'
 import type { TaskCompletion } from '@taskmanager/common-types'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseServiceRole = process.env.SUPABASE_SERVICE_ROLE_KEY!
+const supabaseUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL ?? "https://placeholder.supabase.co"
 
-export default async function GroupTasksPage({ params }: { params: Promise<{ id: string }> }) {
+const supabaseServiceRole =
+  process.env.SUPABASE_SERVICE_ROLE_KEY ?? "placeholder-service-role"
+export default async function GroupTasksPage({ params }: { params: { id: string } }) {
   const user = await getUser()
 
   if (!user) {
