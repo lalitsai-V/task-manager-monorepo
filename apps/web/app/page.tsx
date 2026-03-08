@@ -18,7 +18,7 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 border-t border-gray-800">
-        <h2 className="text-3xl lg:text-4xl font-bold text-white mb-12 lg:mb-16 text-center">Why Choose TaskFlow?</h2>
+        <h2 className="text-3xl lg:text-4xl font-bold text-white mb-12 lg:mb-16 text-center">Why ?????</h2>
         <motion.div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           <motion.div className="" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
             initial={{ y: -200, opacity: 0 }}
