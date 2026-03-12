@@ -10,37 +10,36 @@ jobs:
   ci:
     runs-on: ubuntu-latest
 
-    # Make Supabase variables available to the entire job
+    
     env:
       NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
       NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
     steps:
-      # Checkout repository
+  
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Setup Node.js
+     
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # Install pnpm
+      
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           run_install: false
 
-      # Install dependencies
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # Lint
+      
       - name: Run lint
         run: pnpm lint
 
-      # Type check
+     
       - name: Run TypeScript type check
         run: pnpm exec turbo run type-check
 

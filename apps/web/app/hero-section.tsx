@@ -14,7 +14,7 @@ export function HeroSection() {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ delay: 0.2, duration: 0.8, type: 'spring', stiffness: 100, damping: 25 }}
         >
-          Manage Tasks
+          TASK tracker
           <br />
           <span className="text-primary">Together</span>
         </motion.h1>
